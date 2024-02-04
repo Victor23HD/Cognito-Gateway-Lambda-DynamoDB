@@ -6,10 +6,12 @@ import {
 import MainImage from "../../image/cool-background.png";
 import LoginImage from "../../image/login_image.jpg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
 
 function Login() {
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,6 +21,8 @@ function Login() {
   };
 
   const userPool = new CognitoUserPool(poolData);
+
+  let navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -37,6 +41,8 @@ function Login() {
 
     const cognitoUser = new CognitoUser(userData);
 
+    
+
     cognitoUser.authenticateUser(authenticationDetails, {
       onSuccess: (session) => {
         const idToken = session.getIdToken().getJwtToken();
@@ -51,6 +57,7 @@ function Login() {
             if (response.status === 200) {
               Cookies.set("Token", idToken);
               Cookies.set("Email", email);
+              navigate("/Create");
             } else {
             }
           })

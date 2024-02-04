@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./Components/Sidebar/Index";
-import Home from "./pages/Home/index.jsx";
+import Create from "./pages/Create/index.jsx";
 import Login from "./pages/login";
 
 function App() {
@@ -9,10 +9,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route
-          path="/Home"
+          path="/Create"
           element={
             <Sidebar>
-              <Home />
+              <Create />
             </Sidebar>
           }
         />
