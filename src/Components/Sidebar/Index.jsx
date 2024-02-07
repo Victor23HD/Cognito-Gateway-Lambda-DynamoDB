@@ -8,38 +8,38 @@ function Sidebar({ children }) {
           <div className="text-2xl text-center font-medium  p-4 text-green-500">
             - FrutaControl -
           </div>
-          <div className="flex flex-col text-lg text-white p-4 w-full space-y-2">
+          <div className="flex flex-col text-lg text-white p-4 w-full space-y-3">
             <button
-              className={`p-1 text-left pl-4 ${
-                currentPage === "Create" ? " font-medium border-l-2" : ""
+              className={`p-1 transition duration-300 text-left rounded-lg pl-2 ${
+                currentPage === "Create" ? " font-medium ring-2 ring-white" : ""
               }`}
             >
               {" "}
-              [ Criar ]
+              | Criar 
             </button>
             <button
-              className={` p-1 text-left pl-4${
-                currentPage === "Read" ? "font-medium border-l-2" : " "
+              className={`p-1 transition duration-300 text-left rounded-lg pl-2  ${
+                currentPage === "Read" ? "font-medium ring-2 ring-white" : " hover:ring-2 ring-slate-300"
               }`}
             >
               {" "}
-              [ Listar ]
+              | Listar 
             </button>
             <button
-              className={` p-1 text-left pl-4 transition duration-300 hover:border-l-2 ${
-                currentPage === "Update" ? "font-medium border-l-2" : ""
+              className={`p-1 transition duration-300 text-left rounded-lg pl-2  ${
+                currentPage === "Update" ? "font-medium ring-2 ring-white" : "hover:ring-2 ring-slate-300"
               }`}
             >
               {" "}
-              [ Atualizar ]
+              | Atualizar 
             </button>
             <button
-              className={` p-1 text-left pl-4  ${
-                currentPage === "Delete" ? "font-medium border-l-2" : ""
+              className={`p-1 transition duration-300 text-left rounded-lg pl-2  ${
+                currentPage === "Delete" ? "font-medium ring-2 ring-white" : "hover:ring-2 ring-slate-300"
               }`}
             >
               {" "}
-              [ Deletar ]
+              | Deletar 
             </button>
           </div>
         </div>
